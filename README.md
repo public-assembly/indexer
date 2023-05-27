@@ -1,17 +1,9 @@
-This is a [wagmi](https://wagmi.sh) + [ConnectKit](https://docs.family.co/connectkit) + [Next.js](https://nextjs.org) project bootstrapped with [`create-wagmi`](https://github.com/wagmi-dev/wagmi/tree/main/packages/create-wagmi)
+Were gonn make our own ap-indexer by listening to press creation events using src/hooks/useCreationEvents, pushing historical events to arweave, and then updating the list every time new events are published
 
-# Getting Started
+The code for pushing to bundlr comes from Nader's recent [tutorial](https://github.com/dabit3/nextjs-route-handlers-permanent-file-storage). All the dep's are installed, just need to copy over the api code.
 
-Run `npm run dev` in your terminal, and then open [localhost:3000](http://localhost:3000) in your browser.
+Also the useCreationEvents hook isn't working correctly yet, this is now using viem event filtering which I haven't figured out yet (it's close)
 
-Once the webpage has loaded, changes made to files inside the `src/` directory (e.g. `src/pages/index.tsx`) will automatically update the webpage.
+Lastly, /create allows you to create ERC721 + ERC1155 Press contracts, which I just upgraded + deployed new versions of to provide an informative creation event to the factories which was missing before.
 
-# Learn more
-
-To learn more about [Next.js](https://nextjs.org), [ConnectKit](https://docs.family.co/connectkit) or [wagmi](https://wagmi.sh), check out the following resources:
-
-- [wagmi Documentation](https://wagmi.sh) – learn about wagmi Hooks and API.
-- [wagmi Examples](https://wagmi.sh/examples/connect-wallet) – a suite of simple examples using wagmi.
-- [ConnectKit Documentation](https://docs.family.co/connectkit) – learn more about ConnectKit (configuration, theming, advanced usage, etc).
-- [Next.js Documentation](https://nextjs.org/docs) learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I'm getting a build error so this isn't on vercel yet, but will be soon 

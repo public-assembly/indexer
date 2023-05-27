@@ -1,5 +1,4 @@
-'use client'
-// @ts-nocheck
+'use client';
 
 import { ConnectKitButton } from 'connectkit';
 import { useAuth } from '../../hooks/useAuth';
@@ -12,7 +11,7 @@ export const Connect = () => {
   const [showDisconnect, setShowDisonnect] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
 
-  const user = address ? address : null;
+  const user = address ? address : undefined;
 
   const handleShowDisconnect = () => {
     setShowDisonnect(!showDisconnect);
@@ -27,7 +26,7 @@ export const Connect = () => {
     setShowOptions(!showOptions);
   };
 
-  const canAccess = true
+  const canAccess = true;
 
   return (
     <ConnectKitButton.Custom>
@@ -35,41 +34,56 @@ export const Connect = () => {
         return (
           <>
             {!isConnected ? (
-              <button className="text-white hover:font-bold" onClick={show}>
-                {"connect"}
+              <button className='text-white hover:font-bold' onClick={show}>
+                {'connect'}
               </button>
             ) : (
-              <div className="text-white flex flex-row flex-wrap border-black">
+              <div className='text-white flex flex-row flex-wrap border-black'>
                 {showDisconnect ? (
-                  <div className="w-full flex flex-row justify-end">
-                    <button className="hover:font-bold w-fit flex flex-row pb-2" onClick={handleLogout}>
-                      {"disconnect"}
+                  <div className='w-full flex flex-row justify-end'>
+                    <button
+                      className='hover:font-bold w-fit flex flex-row pb-2'
+                      onClick={handleLogout}
+                    >
+                      {'disconnect'}
                     </button>
                   </div>
                 ) : (
                   <></>
                 )}
-                <div className="text-white flex flex-row w-full justify-end space-x-2">
+                <div className='text-white flex flex-row w-full justify-end space-x-2'>
                   {canAccess && (
                     <>
                       {showOptions && (
                         <>
-                          <Link href="/create" className="text-white hover:font-bold">
+                          <Link
+                            href='/create'
+                            className='text-white hover:font-bold'
+                          >
                             create
                           </Link>
-                          <Link href="/manage" className="text-white hover:font-bold">
+                          <Link
+                            href='/manage'
+                            className='text-white hover:font-bold'
+                          >
                             manage
                           </Link>
                         </>
                       )}
                       &nbsp;
-                      <button className="text-white hover:font-bold" onClick={toggleOptions}>
+                      <button
+                        className='text-white hover:font-bold'
+                        onClick={toggleOptions}
+                      >
                         {showOptions ? '–' : '+'}
                       </button>
                       &nbsp;
                     </>
                   )}
-                  <button className="text-white w-fit flex flex-row hover:font-bold" onClick={handleShowDisconnect}>
+                  <button
+                    className='text-white w-fit flex flex-row hover:font-bold'
+                    onClick={handleShowDisconnect}
+                  >
                     {shortenAddress(user)}
                   </button>
                 </div>

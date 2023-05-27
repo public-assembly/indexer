@@ -19,7 +19,7 @@ import { WatchPendingTransactions } from '../../components/WatchPendingTransacti
 import { WriteContract } from '../../components/WriteContract'
 import { WriteContractPrepared } from '../../components/WriteContractPrepared'
 
-export function Page() {
+export default function Page() {
 
   return (
     <>
@@ -95,5 +95,3 @@ export function Page() {
     </>
   )
 }
-
-export default Page

@@ -8,7 +8,10 @@ export default function Page() {
   const { provider } = useAuth();
 
   // @ts-ignore
-  const { creationEvents } = useCreationEvents(provider);
+  const { creationEvents } = useCreationEvents({
+    providerForQuery: provider,
+    blockStart: BigInt(17352185),
+  });
 
   console.log('creationEvents', creationEvents);
 
